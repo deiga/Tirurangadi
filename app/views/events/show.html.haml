@@ -14,3 +14,5 @@
         - a.attendances_for(@event.candidate_ids).each do |attendance|
           %td= attendance.data
 = link_to 'Events', events_path
+|
+= link_to 'Edit', edit_event_path
