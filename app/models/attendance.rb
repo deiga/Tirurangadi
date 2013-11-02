@@ -1,4 +1,3 @@
 class Attendance < ActiveRecord::Base
-  belongs_to :time
-  belongs_to :attendee
+  belongs_to :candidate
 end
