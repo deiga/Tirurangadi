@@ -12,3 +12,13 @@
  *= require formtastic
  *= require_tree .
  */
+
+body {
+  width: 40%;
+  height: 80%;
+  margin: auto;
+  margin-top: 7%;
+  border: 2px dotted #9400D3;
+  padding: 10px;
+  padding-left: 50px;
+}
