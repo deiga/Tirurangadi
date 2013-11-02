@@ -39,7 +39,6 @@ class EventsController < ApplicationController
   end
 
   def attendance
-    # raise params.inspect
     attendee = Attendee.create(name: attendance_params[:name])
     candidates = attendance_params[:candidates]
     candidates.each do |k,v|
