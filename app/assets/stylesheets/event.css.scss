@@ -6,3 +6,8 @@ th, td {
   max-width: 100px;
   text-align: center;
 }
+
+input[id^="attendance_c"] {
+  margin-left: 20px;
+  margin-right: 10px;
+}
