@@ -5,6 +5,6 @@ class Event < ActiveRecord::Base
   validates :name, :created_by, presence: true
 
   def attendees
-    self.candidates.map { |c| c.attendances.map(&:attendee) }.flatten
+    self.candidates.map { |c| c.attendances.map(&:attendee) }.flatten.uniq
   end
 end
