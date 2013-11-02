@@ -33,6 +33,7 @@ gem 'pry-byebug'
 gem 'pry-rails'
 gem 'pry-plus'
 gem 'better_errors'
+gem 'formtastic'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
