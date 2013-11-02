@@ -1,6 +1,8 @@
 %h1= @event.name
+%h2= @event.created_by
+%p= @event.location
 %ul
-  - @event.times.each do |t|
+  - @event.candidates.each do |t|
     %li>
       = t.name
       = t.time
