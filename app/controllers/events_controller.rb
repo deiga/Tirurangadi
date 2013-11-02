@@ -24,6 +24,9 @@ class EventsController < ApplicationController
   end
 
   def update
+    @event = Event.find(params[:id])
+    @event.update_attributes(event_params)
+    redirect_to event_path
   end
 
   def show
@@ -35,8 +38,22 @@ class EventsController < ApplicationController
     @event = Event.new
   end
 
+  def attendance
+    # raise params.inspect
+    attendee = Attendee.create(name: attendance_params[:name])
+    candidates = attendance_params[:candidates]
+    candidates.each do |k,v|
+      Attendance.create(attendee: attendee, candidate_id: k, data: v)
+    end
+    redirect_to event_path
+  end
+
   private
     def event_params
       params.require(:event).permit(:name, :created_by, :location, :deadline, candidates_attributes: [:title, :time, :_destroy])
+    end
+
+    def attendance_params
+      params.require(:attendance).permit!#(:name, :candidates)
     end
 end

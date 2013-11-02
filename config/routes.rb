@@ -1,6 +1,10 @@
 Tirurangadi::Application.routes.draw do
 
-  resources :events
+  resources :events do
+    member do
+      post :attendance
+    end
+  end
 
   root 'events#index'
 

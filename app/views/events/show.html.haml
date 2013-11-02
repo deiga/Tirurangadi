@@ -13,6 +13,11 @@
         %td= a.name
         - a.attendances_for(@event.candidate_ids).each do |attendance|
           %td= attendance.data
+= form_tag(attendance_event_path) do
+  = text_field_tag 'attendance[name]'
+  - @event.candidates.each do |c|
+    = check_box_tag "attendance[candidates][#{c.id}]"
+  = submit_tag 'Send'
 = link_to 'Events', events_path
 |
 = link_to 'Edit', edit_event_path
