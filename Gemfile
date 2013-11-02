@@ -29,11 +29,18 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'haml-rails'
 gem 'rspec-rails'
+
+# Better IRB
 gem 'pry-byebug'
 gem 'pry-rails'
 gem 'pry-plus'
+
 gem 'better_errors'
+
+# Forms
 gem 'formtastic'
+gem "cocoon"
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.

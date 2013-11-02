@@ -1,0 +1,5 @@
+.nested-fields
+  = f.inputs do
+    = f.input :title
+    = f.input :time, as: :datetime_picker
+    = link_to_remove_association "remove candidate", f
