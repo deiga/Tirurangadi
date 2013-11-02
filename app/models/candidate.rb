@@ -1,3 +1,3 @@
 class Candidate < ActiveRecord::Base
-  has_many :attendances
+  has_many :attendances, dependent: :destroy
 end

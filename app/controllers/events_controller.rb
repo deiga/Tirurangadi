@@ -49,7 +49,7 @@ class EventsController < ApplicationController
 
   private
     def event_params
-      params.require(:event).permit(:name, :created_by, :location, :deadline, candidates_attributes: [:title, :time, :_destroy])
+      params.require(:event).permit(:name, :created_by, :location, :deadline, candidates_attributes: [:title, :time, :_destroy, :id])
     end
 
     def attendance_params
