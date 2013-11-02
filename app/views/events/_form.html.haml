@@ -1,0 +1,13 @@
+= semantic_form_for e do |f|
+  = f.inputs do
+    = f.input :name
+    = f.input :created_by
+    = f.input :location
+    = f.input :deadline , as: :datetime_picker
+  %h3 Candidates
+  #candidates
+    = f.semantic_fields_for :candidates do |candidate|
+      = render 'candidate_fields', f: candidate
+    .links
+      = link_to_add_association 'add candidate', f, :candidates
+  = f.actions
