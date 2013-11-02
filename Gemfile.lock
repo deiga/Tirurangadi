@@ -192,7 +192,6 @@ DEPENDENCIES
   formtastic
   haml-rails
   jbuilder (~> 1.2)
-  jquery-datatables-rails!
   jquery-rails
   pry-byebug
   pry-plus

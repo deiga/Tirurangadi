@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'haml-rails'
 gem 'rspec-rails'
+gem 'factory_girl-rails'
 
 # Better IRB
 gem 'pry-byebug'
