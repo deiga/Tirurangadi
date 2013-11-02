@@ -7,18 +7,26 @@
       %th Name
       - @event.candidates.each do |c|
         %th= c.title
+    %tr
+      %th
+      - @event.candidates.each do |c|
+        %th= c.time
   %tbody
     - @attendees.each do |a|
       %tr
         %td= a.name
         - a.attendances_for(@event.candidate_ids).each do |attendance|
           %td= attendance.data
-= form_tag(attendance_event_path) do
-  = text_field_tag 'attendance[name]'
-  - @event.candidates.each do |c|
-    = hidden_field_tag "attendance[candidates][#{c.id}]", "0"
-    = check_box_tag "attendance[candidates][#{c.id}]"
-  = submit_tag 'Send'
+    %tr
+      = form_tag(attendance_event_path) do
+        %td
+          = text_field_tag 'attendance[name]', 'Name', size: 7
+          - @event.candidates.each do |c|
+            %td
+              = hidden_field_tag "attendance[candidates][#{c.id}]", "0"
+              = check_box_tag "attendance[candidates][#{c.id}]"
+        %td
+          = submit_tag 'Send'
 = link_to 'Events', events_path
 |
 = link_to 'Edit', edit_event_path
