@@ -1,0 +1,9 @@
+%h1 Create event
+
+= semantic_form_for @event do |f|
+  = f.inputs do
+    = f.input :name
+    = f.input :location
+    = f.input :created_by
+    = f.input :deadline , as: :datetime_picker
+  = f.submit
