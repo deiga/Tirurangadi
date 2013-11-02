@@ -1,5 +1,6 @@
 class Event < ActiveRecord::Base
   has_many :candidates
+  accepts_nested_attributes_for :candidates, :reject_if => proc {|attributes| attributes[:title].blank? }, :allow_destroy => true
 
-  validates :name, presence: true
+  validates :name, :created_by, presence: true
 end

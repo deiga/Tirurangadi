@@ -1,4 +1,7 @@
 class EventsController < ApplicationController
+
+  respond_to :html, :json
+
   def index
       @events = Event.all
   end
@@ -32,6 +35,6 @@ class EventsController < ApplicationController
 
   private
     def event_params
-      params.require(:event).permit(:name, :created_by, :location, :deadline)
+      params.require(:event).permit(:name, :created_by, :location, :deadline, candidates_attributes: [:title, :time, :_destroy])
     end
 end

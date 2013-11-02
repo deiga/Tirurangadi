@@ -1,8 +1,7 @@
 %h1= @event.name
-%h2= @event.created_by
-%p= @event.location
-%ul
-  - @event.candidates.each do |t|
-    %li>
-      = t.name
-      = t.time
+%h4= "Created by: #{@event.created_by}"
+%p= "Location: #{@event.location}" if @event.location.present?
+%table#candidates{'data-source' => "#{candidates_event_path(format: :json)}"}
+  %thead
+  %tbody
+= link_to 'Events', events_path
